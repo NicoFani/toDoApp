@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.task-description {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}

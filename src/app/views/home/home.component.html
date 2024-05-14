@@ -1,0 +1,33 @@
+<main class="main">
+  <div class="main-header">
+    <h1 class="date">May 13, 2024</h1>
+    <p class="task-status">3 Incomplete, 3 Completed</p>
+  </div>
+  <div class="main-content">
+    <div class="task-container">
+      <h2 class="task-header">Incomplete</h2>
+      <hr />
+      @for(task of tasks; track task.description){ @if(task.isDone === false){
+      <app-task
+        [taskDescription]="task.description"
+        [status]="task.isDone"
+      ></app-task>
+      } }
+    </div>
+    <div class="task-container">
+      <h2 class="task-header">Completed</h2>
+      <hr />
+      @for(task of tasks; track task.description){ @if(task.isDone === true){
+      <app-task
+        [taskDescription]="task.description"
+        [status]="task.isDone"
+      ></app-task>
+      } }
+    </div>
+  </div>
+  <div class="main-footer">
+    <button class="add-task-button">
+      <span class="material-symbols-outlined"> add </span>
+    </button>
+  </div>
+</main>

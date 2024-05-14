@@ -7,10 +7,8 @@
   margin: 20px 0;
 }
 .task-checkbox {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #fff;
-  border-radius: 10px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 .task-description {

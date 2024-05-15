@@ -1,0 +1,32 @@
+<div class="modal-container">
+  <div class="modal-header">
+    <div class="left-header-container">
+      <h4 class="modal-title">Add a New Task</h4>
+    </div>
+    <div class="right-header-container">
+      <button
+        type="button"
+        class="close-btn"
+        aria-label="Close"
+        (click)="closeModal()"
+      >
+        <span class="material-symbols-outlined"> close </span>
+      </button>
+    </div>
+  </div>
+  <form class="form">
+    <div class="modal-body">
+      <label for="taskDescription">New Task</label>
+      <input
+        type="text"
+        id="taskDescription"
+        class="form-control"
+        placeholder="Enter task..."
+        required
+      />
+    </div>
+  </form>
+  <div class="modal-footer">
+    <button type="button" class="add-task-btn">Add Task</button>
+  </div>
+</div>

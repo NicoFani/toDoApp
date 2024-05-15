@@ -26,8 +26,13 @@
     </div>
   </div>
   <div class="main-footer">
-    <button class="add-task-button">
+    <button class="add-task-button" (click)="openModal()">
       <span class="material-symbols-outlined"> add </span>
     </button>
   </div>
+  @if (modalSwitch == true) {
+  <div class="overlay">
+    <app-new-task-modal></app-new-task-modal>
+  </div>
+  }
 </main>

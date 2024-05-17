@@ -3,6 +3,7 @@ import { TaskComponent } from '../../components/task/task.component';
 import { DatePipe } from '@angular/common';
 import { NewTaskModalComponent } from '../../components/new-task-modal/new-task-modal.component';
 import { SwitchModalService } from '../../services/switch-modal.service';
+import { Task } from '../../interfaces/task';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +14,10 @@ import { SwitchModalService } from '../../services/switch-modal.service';
   providers: [DatePipe],
 })
 export class HomeComponent implements OnInit {
-  tasks = [
-    { name: 'Task 1', description: 'Make the bed', isDone: true },
-    { name: 'Task 2', description: 'Wash the dishes', isDone: false },
-    { name: 'Task 3', description: 'Go to supermarket', isDone: false },
+  tasks: Task[] = [
+    { description: 'Make the bed', isDone: true },
+    { description: 'Wash the dishes', isDone: false },
+    { description: 'Go to supermarket', isDone: false },
   ];
 
   fecha: any = '';
@@ -41,11 +42,14 @@ export class HomeComponent implements OnInit {
     console.log('Modal opened', this.modalSwitch);
   }
 
-  // addTask(description: string) {
-  //   this.tasks.push({
-  //     name: `Task ${this.tasks.length + 1}`,
-  //     description,
-  //     isDone: false,
-  //   });
-  // }
+  addTask(description: string) {
+    this.tasks.push({
+      description,
+      isDone: false,
+    });
+  }
+
+  toggleTaskStatus(task: Task) {
+    task.isDone = !task.isDone;
+  }
 }

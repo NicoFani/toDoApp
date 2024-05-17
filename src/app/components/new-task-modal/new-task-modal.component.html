@@ -14,10 +14,12 @@
       </button>
     </div>
   </div>
-  <form class="form">
+  <form class="form" [formGroup]="taskForm">
     <div class="modal-body">
       <label for="taskDescription">New Task</label>
       <input
+        name="taskDescription"
+        formControlName="taskDescription"
         type="text"
         id="taskDescription"
         class="form-control"
@@ -27,6 +29,8 @@
     </div>
   </form>
   <div class="modal-footer">
-    <button type="button" class="add-task-btn">Add Task</button>
+    <button type="submit" class="add-task-btn" [disabled]="taskForm.invalid">
+      Add Task
+    </button>
   </div>
 </div>

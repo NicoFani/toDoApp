@@ -1,8 +1,13 @@
 <div class="container">
   @if(status() === true){
-  <input type="checkbox" class="task-checkbox" checked />
+  <input
+    type="checkbox"
+    class="task-checkbox"
+    checked
+    (change)="changeStatus()"
+  />
   } @else {
-  <input type="checkbox" class="task-checkbox" />
+  <input type="checkbox" class="task-checkbox" (change)="changeStatus()" />
   }
   <span class="task-description">{{ taskDescription() }}</span>
 </div>

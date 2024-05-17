@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, Output, input, output } from '@angular/core';
 import { HomeComponent } from '../../views/home/home.component';
 
 @Component({
@@ -11,4 +11,9 @@ import { HomeComponent } from '../../views/home/home.component';
 export class TaskComponent {
   taskDescription = input<string>();
   status = input<boolean>();
+  @Output() statusChange = new EventEmitter<void>();
+
+  changeStatus() {
+    this.statusChange.emit();
+  }
 }

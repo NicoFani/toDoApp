@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 16px;
+  padding: 16px 0;
 }
 .add-task-btn {
   background-color: #413ed9;
@@ -77,4 +77,14 @@
   padding: 8px 16px;
   width: 90%;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.add-task-btn:disabled {
+  background-color: #a5a5a5;
+  cursor: not-allowed;
+}
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
 }

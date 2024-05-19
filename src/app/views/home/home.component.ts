@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { TaskComponent } from '../../components/task/task.component';
 import { DatePipe } from '@angular/common';
 import { NewTaskModalComponent } from '../../components/new-task-modal/new-task-modal.component';
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     console.log('Modal opened', this.modalSwitch);
   }
 
-  addTask(description: string) {
+  addNewTask(description: string) {
     this.tasks.push({
       description,
       isDone: false,

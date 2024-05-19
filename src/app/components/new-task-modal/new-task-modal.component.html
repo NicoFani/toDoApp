@@ -14,23 +14,28 @@
       </button>
     </div>
   </div>
-  <form class="form" [formGroup]="taskForm">
+  <form class="form" [formGroup]="taskForm" (ngSubmit)="addTask()">
     <div class="modal-body">
-      <label for="taskDescription">New Task</label>
+      <label for="description">New Task</label>
       <input
-        name="taskDescription"
-        formControlName="taskDescription"
+        name="description"
+        formControlName="description"
         type="text"
-        id="taskDescription"
+        id="description"
         class="form-control"
         placeholder="Enter task..."
         required
       />
+      @if(taskForm.controls['description'].invalid &&
+      (taskForm.controls['description'].dirty ||
+      taskForm.controls['description'].touched)){
+      <div class="error-message">Task description is required</div>
+      }
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="add-task-btn" [disabled]="taskForm.invalid">
+        Add Task
+      </button>
     </div>
   </form>
-  <div class="modal-footer">
-    <button type="submit" class="add-task-btn" [disabled]="taskForm.invalid">
-      Add Task
-    </button>
-  </div>
 </div>

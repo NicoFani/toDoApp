@@ -9,7 +9,7 @@ import { HomeComponent } from '../../views/home/home.component';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  taskDescription = input<string>();
+  description = input<string>();
   status = input<boolean>();
   @Output() statusChange = new EventEmitter<void>();
 

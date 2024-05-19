@@ -9,7 +9,7 @@
       <hr />
       @for(task of tasks; track task.description){ @if(task.isDone === false){
       <app-task
-        [taskDescription]="task.description"
+        [description]="task.description"
         [status]="task.isDone"
         (statusChange)="toggleTaskStatus(task)"
       ></app-task>
@@ -20,7 +20,7 @@
       <hr />
       @for(task of tasks; track task.description){ @if(task.isDone === true){
       <app-task
-        [taskDescription]="task.description"
+        [description]="task.description"
         [status]="task.isDone"
         (statusChange)="toggleTaskStatus(task)"
       ></app-task>
@@ -34,7 +34,7 @@
   </div>
   @if (modalSwitch == true) {
   <div class="overlay">
-    <app-new-task-modal></app-new-task-modal>
+    <app-new-task-modal (taskAdded)="addNewTask($event)"></app-new-task-modal>
   </div>
   }
 </main>

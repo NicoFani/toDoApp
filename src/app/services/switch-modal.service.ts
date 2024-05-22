@@ -6,5 +6,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class SwitchModalService {
   constructor() {}
 
+  // Event to emit the modal status
+
   $modal = new EventEmitter<any>();
 }

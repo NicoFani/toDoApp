@@ -7,7 +7,8 @@
     <div class="task-container">
       <h2 class="task-header">Incomplete</h2>
       <hr />
-      @for(task of tasks; track task.description){ @if(task.isDone === false){
+      @for(task of localTasks; track task.description){ @if(task.isDone ===
+      false){
       <app-task
         [description]="task.description"
         [status]="task.isDone"
@@ -18,7 +19,8 @@
     <div class="task-container">
       <h2 class="task-header">Completed</h2>
       <hr />
-      @for(task of tasks; track task.description){ @if(task.isDone === true){
+      @for(task of localTasks; track task.description){ @if(task.isDone ===
+      true){
       <app-task
         [description]="task.description"
         [status]="task.isDone"
